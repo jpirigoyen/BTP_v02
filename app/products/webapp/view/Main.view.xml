@@ -1,0 +1,76 @@
+<mvc:View
+	controllerName="products.controller.Main"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	core:require="{
+		formatter: 'products/model/formatter'
+	}"
+>
+	<Page
+		title="{i18n>appTitle}"
+		id="page"
+	>
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<Input
+					id="inputID"
+					placeholder="ID"
+				/>
+				<Input
+					id="inputOrder"
+					placeholder="Order Number"
+				/>
+				<Input
+					id="inputCustomer"
+					placeholder="customer"
+				/>
+				<Input
+					id="inputStatus"
+					placeholder="status"
+				/>
+				<Input
+					id="inputImport"
+					placeholder="Importe total"
+				/>
+				<Button
+					text="Crear Producto"
+					press="onCreateProduct"
+					type="Emphasized"
+					class="sapUiSmallMarginTop"
+				/>
+			</VBox>
+			<Table items="{/Productos}">
+				<columns>
+					<Column>
+						<Text text="ID" />
+					</Column>
+					<Column>
+						<Text text="orderNumber" />
+					</Column>
+					<Column>
+						<Text text="customer" />
+					</Column>
+					<Column>
+						<Text text="status" />
+					</Column>
+					<Column>
+						<Text text="totalAmount" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{ID}" />
+							<Text text="{orderNumber}" />
+							<Text text="{customer}" />
+							<Text text="{status}" />
+							<Text text="{totalAmount}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>
